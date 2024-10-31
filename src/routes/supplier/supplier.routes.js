@@ -6,7 +6,7 @@ import {
   listIdSupplierController,
   updateSupplierController,
   deleteSupplierController,
-} from "../../../../n2-desenvolvimento-back-end/controllers";
+} from "../../controllers";
 
 export const suppliersRouter = Router();
 
