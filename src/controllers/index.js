@@ -4,7 +4,7 @@ import {
   listIdUserController,
   updateUserController,
   deleteUserController,
-} from "./user/user.controller";
+} from "./user";
 
 import {
   createSupplierController,
@@ -12,7 +12,7 @@ import {
   listIdSupplierController,
   updateSupplierController,
   deleteSupplierController,
-} from "./supplier/supplier.controller";
+} from "./supplier";
 
 import {
   createStockController,
@@ -20,7 +20,7 @@ import {
   listIdStockController,
   updateStockController,
   deleteStockController,
-} from "./stock/stock.controller";
+} from "./stock";
 
 import {
   createProductController,
@@ -28,7 +28,7 @@ import {
   listIdProductController,
   updateProductController,
   deleteProductController,
-} from "./product/product.controller";
+} from "./product";
 
 import {
   createCategorieController,
@@ -36,7 +36,7 @@ import {
   listIdCategorieController,
   updateCategorieController,
   deleteCategorieController,
-} from "./categorie/categorie.controller";
+} from "./categorie";
 
 import {
   createRequestController,
@@ -44,7 +44,7 @@ import {
   listIdRequestController,
   updateRequestController,
   deleteRequestController,
-} from "./request/request.controller";
+} from "./request";
 
 export {
   createUserController,

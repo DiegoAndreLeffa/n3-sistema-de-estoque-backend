@@ -6,7 +6,7 @@ import {
   listIdRequestController,
   updateRequestController,
   deleteRequestController,
-} from "../../../../n2-desenvolvimento-back-end/controllers";
+} from "../../controllers";
 
 export const requestsRouter = Router();
 

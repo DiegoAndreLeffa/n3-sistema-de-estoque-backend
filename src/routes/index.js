@@ -1,9 +1,9 @@
-import { categoriesRouter } from "./categorie/categoriesRouter";
-import { productsRouter } from "./product/product.routes";
-import { requestsRouter } from "./request/request.routes";
-import { stoksRouter } from "./stoks/stoks.routes";
-import { suppliersRouter } from "./supplier/supplier.routes";
-import { userRouter } from "./user/user.routes";
+import { categoriesRouter } from "./categorie";
+import { productsRouter } from "./product";
+import { requestsRouter } from "./request";
+import { stoksRouter } from "./stock";
+import { suppliersRouter } from "./supplier";
+import { userRouter } from "./user";
 
 export {
   categoriesRouter,
