@@ -1,4 +1,4 @@
-import { authenticationService } from "../../services";
+import { authenticationService } from "../../services/index.js";
 
 export const authenticationController = async (Request, Response) => {
   try {

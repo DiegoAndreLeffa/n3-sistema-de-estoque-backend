@@ -4,7 +4,7 @@ import {
   listIdStockService,
   updateStockService,
   deleteStockService,
-} from "../../services";
+} from "../../services/index.js";
 
 export const createStockController = async (Request, Response) => {
   try {

@@ -4,7 +4,7 @@ import {
   listIdUserService,
   updateUserService,
   deleteUserService,
-} from "../../services";
+} from "../../services/index.js";
 
 export const createUserController = async (Request, Response) => {
   try {

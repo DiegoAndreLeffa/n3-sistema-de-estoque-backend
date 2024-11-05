@@ -4,7 +4,7 @@ import {
   listIdCategorieService,
   updateCategorieService,
   deleteCategorieService,
-} from "../../services";
+} from "../../services/index.js";
 
 export const createCategorieController = async (Request, Response) => {
   try {

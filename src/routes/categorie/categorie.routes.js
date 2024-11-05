@@ -6,7 +6,7 @@ import {
   listIdCategorieController,
   updateCategorieController,
   deleteCategorieController,
-} from "../../controllers";
+} from "../../controllers/index.js";
 
 export const categoriesRouter = Router();
 

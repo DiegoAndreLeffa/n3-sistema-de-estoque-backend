@@ -6,12 +6,12 @@ import {
   listIdStockController,
   updateStockController,
   deleteStockController,
-} from "../../controllers";
+} from "../../controllers/index.js";
 
-export const stoksRouter = Router();
+export const stocksRouter = Router();
 
-stoksRouter.post("", createStockController);
-stoksRouter.get("", listStockController);
-stoksRouter.get("/:id", listIdStockController);
-stoksRouter.patch("/:id", updateStockController);
-stoksRouter.delete("", deleteStockController);
+stocksRouter.post("", createStockController);
+stocksRouter.get("", listStockController);
+stocksRouter.get("/:id", listIdStockController);
+stocksRouter.patch("/:id", updateStockController);
+stocksRouter.delete("", deleteStockController);

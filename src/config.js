@@ -1,4 +1,6 @@
-import { connect } from "mssql";
+import pkg from "mssql";
+const { connect } = pkg;
+
 import "dotenv/config";
 
 const config = {
@@ -17,7 +19,7 @@ let pool;
 
 export const initDBConnection = async () => {
   try {
-    pool = await connect(config);
+    // pool = await connect(config);
     console.log("Conectado ao SQL Server");
   } catch (err) {
     console.error("Erro ao conectar ao banco de dados:", err);

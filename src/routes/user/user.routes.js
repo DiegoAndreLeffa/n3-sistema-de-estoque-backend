@@ -6,7 +6,7 @@ import {
   listIdUserController,
   updateUserController,
   deleteUserController,
-} from "../../controllers";
+} from "../../controllers/index.js";
 
 export const userRouter = Router();
 

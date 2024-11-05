@@ -4,7 +4,7 @@ import {
   listIdSupplierService,
   updateSupplierService,
   deleteSupplierService,
-} from "../..services";
+} from "../../services/index.js";
 
 export const createSupplierController = async (Request, Response) => {
   try {

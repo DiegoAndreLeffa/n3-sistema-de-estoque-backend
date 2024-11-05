@@ -4,7 +4,7 @@ import {
   listIdUserController,
   updateUserController,
   deleteUserController,
-} from "./user";
+} from "./user/user.controller.js";
 
 import {
   createSupplierController,
@@ -12,7 +12,7 @@ import {
   listIdSupplierController,
   updateSupplierController,
   deleteSupplierController,
-} from "./supplier";
+} from "./supplier/supplier.controller.js";
 
 import {
   createStockController,
@@ -20,7 +20,7 @@ import {
   listIdStockController,
   updateStockController,
   deleteStockController,
-} from "./stock";
+} from "./stock/stock.controller.js";
 
 import {
   createProductController,
@@ -28,7 +28,7 @@ import {
   listIdProductController,
   updateProductController,
   deleteProductController,
-} from "./product";
+} from "./product/product.controller.js";
 
 import {
   createCategorieController,
@@ -36,7 +36,7 @@ import {
   listIdCategorieController,
   updateCategorieController,
   deleteCategorieController,
-} from "./categorie";
+} from "./categorie/categorie.controller.js";
 
 import {
   createRequestController,
@@ -44,9 +44,9 @@ import {
   listIdRequestController,
   updateRequestController,
   deleteRequestController,
-} from "./request";
+} from "./request/request.controller.js";
 
-import { authenticationController } from "./authentication";
+import { authenticationController } from "./authentication/authentication.controller.js";
 
 export {
   createUserController,

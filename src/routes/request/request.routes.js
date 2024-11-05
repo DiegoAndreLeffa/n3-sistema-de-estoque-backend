@@ -6,7 +6,7 @@ import {
   listIdRequestController,
   updateRequestController,
   deleteRequestController,
-} from "../../controllers";
+} from "../../controllers/index.js";
 
 export const requestsRouter = Router();
 

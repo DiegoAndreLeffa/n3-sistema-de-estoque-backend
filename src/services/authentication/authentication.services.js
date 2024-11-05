@@ -1,5 +1,7 @@
-import { compare } from "bcryptjs";
-import { execSQLQuery } from "../../config";
+import pkg from "bcryptjs";
+const { compare } = pkg;
+
+import { execSQLQuery } from "../../config.js";
 
 export const authenticationService = async (data) => {
   try {

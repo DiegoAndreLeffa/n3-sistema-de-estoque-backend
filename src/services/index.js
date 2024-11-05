@@ -4,7 +4,7 @@ import {
   listIdCategorieService,
   updateCategorieService,
   deleteCategorieService,
-} from "./categorie";
+} from "./categorie/categorie.services.js";
 
 import {
   createRequestService,
@@ -12,15 +12,15 @@ import {
   listIdRequestService,
   updateRequestService,
   deleteRequestService,
-} from "./request";
+} from "./request/request.services.js";
 
 import {
-  createProductService,
-  listProductService,
-  listIdProductService,
-  updateProductService,
-  deleteProductService,
-} from "./product";
+  createProductsService,
+  listProductsService,
+  listIdProductsService,
+  updateProductsService,
+  deleteProductsService,
+} from "./product/product.services.js";
 
 import {
   createSupplierService,
@@ -28,7 +28,7 @@ import {
   listIdSupplierService,
   updateSupplierService,
   deleteSupplierService,
-} from "./supplier";
+} from "./supplier/supplier.services.js";
 
 import {
   createStockService,
@@ -36,7 +36,7 @@ import {
   listIdStockService,
   updateStockService,
   deleteStockService,
-} from "./stock";
+} from "./stock/stock.services.js";
 
 import {
   createUserService,
@@ -44,9 +44,9 @@ import {
   listIdUserService,
   updateUserService,
   deleteUserService,
-} from "./user";
+} from "./user/user.services.js";
 
-import { authenticationService } from "./authentication";
+import { authenticationService } from "./authentication/authentication.services.js";
 
 export {
   createCategorieService,
@@ -59,11 +59,11 @@ export {
   listIdRequestService,
   updateRequestService,
   deleteRequestService,
-  createProductService,
-  listProductService,
-  listIdProductService,
-  updateProductService,
-  deleteProductService,
+  createProductsService,
+  listProductsService,
+  listIdProductsService,
+  updateProductsService,
+  deleteProductsService,
   createSupplierService,
   listSupplierService,
   listIdSupplierService,

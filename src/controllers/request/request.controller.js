@@ -4,7 +4,7 @@ import {
   listIdRequestService,
   updateRequestService,
   deleteRequestService,
-} from "../../services";
+} from "../../services/index.js";
 
 export const createRequestController = async (Request, Response) => {
   try {
