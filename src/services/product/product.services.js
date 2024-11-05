@@ -1,4 +1,4 @@
-import { execSQLQuery } from "../../../config";
+import { execSQLQuery } from "../../config";
 
 export const createProductsService = async (data) => {
   const sqlQuery = ``;
