@@ -7,6 +7,7 @@ import {
   stockRouter,
   supplierRouter,
   userRouter,
+  authRouter,
 } from "./src/routes";
 
 const app = express();
@@ -19,5 +20,6 @@ app.use("/requests", requestsRouter);
 app.use("/stock", stockRouter);
 app.use("/supplier", supplierRouter);
 app.use("/user", userRouter);
+app.use("/authentication", authRouter);
 
 export default app;

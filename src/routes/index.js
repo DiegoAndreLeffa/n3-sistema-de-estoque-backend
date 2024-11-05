@@ -5,6 +5,8 @@ import { stoksRouter } from "./stock";
 import { suppliersRouter } from "./supplier";
 import { userRouter } from "./user";
 
+import { authRouter } from "./authentication";
+
 export {
   categoriesRouter,
   productsRouter,
@@ -12,4 +14,5 @@ export {
   stoksRouter,
   suppliersRouter,
   userRouter,
+  authRouter,
 };

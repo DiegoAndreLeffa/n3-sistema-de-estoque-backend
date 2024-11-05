@@ -46,6 +46,8 @@ import {
   deleteUserService,
 } from "./user";
 
+import { authenticationService } from "./authentication";
+
 export {
   createCategorieService,
   listCategorieService,
@@ -77,4 +79,5 @@ export {
   listIdUserService,
   updateUserService,
   deleteUserService,
+  authenticationService,
 };

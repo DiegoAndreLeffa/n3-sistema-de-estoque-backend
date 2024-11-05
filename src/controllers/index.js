@@ -46,6 +46,8 @@ import {
   deleteRequestController,
 } from "./request";
 
+import { authenticationController } from "./authentication";
+
 export {
   createUserController,
   listUserController,
@@ -77,4 +79,5 @@ export {
   listIdRequestController,
   updateRequestController,
   deleteRequestController,
+  authenticationController,
 };
