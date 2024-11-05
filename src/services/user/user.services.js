@@ -1,8 +1,9 @@
 import { execSQLQuery } from "../../../config";
 
 export const createUserService = async (data) => {
-  const sqlQuery = ``;
   try {
+    const hashedPassword = await bcrypt.hash(data.password, 10);
+    const sqlQuery = ``;
     const result = await execSQLQuery(sqlQuery);
     return result;
   } catch (err) {
