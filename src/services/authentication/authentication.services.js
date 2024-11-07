@@ -15,7 +15,7 @@ export const authenticationService = async (data) => {
       throw new Error("Invalid credentials");
     }
 
-    const user = result.recordset[0];
+    const user = result.recordset[0][0];
 
     const matchPassword = await compare(data.password, user.password);
     if (!matchPassword) {

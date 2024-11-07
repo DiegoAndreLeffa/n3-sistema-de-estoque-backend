@@ -1,15 +1,13 @@
 import { execSQLQuery } from "../../config.js";
 
 export const createProductsService = async (data) => {
-  console.log("Dados recebidos para criação do produto:", data);
-
   const sqlQuery = `
-    EXEC sp_IncluirProduto 
-      @nome = @nome, 
-      @id_categoria = @id_categoria, 
-      @preco = @preco, 
-      @quantidade = @quantidade;
-  `;
+		EXEC sp_IncluirProduto 
+			@nome = @nome, 
+			@id_categoria = @id_categoria, 
+			@preco = @preco, 
+			@quantidade = @quantidade;
+	`;
 
   const params = {
     nome: data.nome,
@@ -20,46 +18,129 @@ export const createProductsService = async (data) => {
 
   try {
     const result = await execSQLQuery(sqlQuery, params);
+
+    if (result && result.error) {
+      throw new Error(
+        result.error.message || "Erro desconhecido ao incluir o produto"
+      );
+    }
+
     return result;
-  } catch (err) {
-    console.error("Erro ao executar a stored procedure:", err);
-    return err;
+  } catch (error) {
+    const errorMessage =
+      error.originalError?.info?.message ||
+      error.message ||
+      "Erro desconhecido";
+    throw new Error(errorMessage);
   }
 };
 
 export const listProductsService = async (data) => {
-  const sqlQuery = ``;
+  const sqlQuery = `SELECT * FROM Produto`;
   try {
     const result = await execSQLQuery(sqlQuery);
-    return result;
-  } catch (err) {
-    return err;
+
+    if (result && result.error) {
+      throw new Error(
+        result.error.message || "Erro desconhecido ao incluir o produto"
+      );
+    }
+
+    return result.recordsets[0];
+  } catch (error) {
+    const errorMessage =
+      error.originalError?.info?.message ||
+      error.message ||
+      "Erro desconhecido";
+    throw new Error(errorMessage);
   }
 };
+
 export const listIdProductsService = async (data) => {
-  const sqlQuery = ``;
+  const sqlQuery = `SELECT * FROM Produto WHERE Id_produto = id_produto`;
+
+  const params = {
+    id_produto: data.id_produto,
+  };
+
   try {
-    const result = await execSQLQuery(sqlQuery);
-    return result;
-  } catch (err) {
-    return err;
+    const result = await execSQLQuery(sqlQuery, params);
+
+    if (result && result.error) {
+      throw new Error(
+        result.error.message || "Erro desconhecido ao incluir o produto"
+      );
+    }
+
+    return result.recordsets[0][0];
+  } catch (error) {
+    const errorMessage =
+      error.originalError?.info?.message ||
+      error.message ||
+      "Erro desconhecido";
+    throw new Error(errorMessage);
   }
 };
-export const updateProductsService = async (data) => {
-  const sqlQuery = ``;
+
+export const updateProductsService = async (id, data) => {
+  const sqlQuery = `
+		EXEC sp_AlterarProduto 
+		@Id_produto = @id_produto,
+		@nome = @nome, 
+		@id_categoria = @id_categoria, 
+		@preco = @preco, 
+		@quantidade = @quantidade;
+	`;
+
+  const params = {
+    id_produto: id,
+    nome: data.nome,
+    id_categoria: data.id_categoria,
+    preco: data.preco,
+    quantidade: data.quantidade,
+  };
+
   try {
-    const result = await execSQLQuery(sqlQuery);
+    const result = await execSQLQuery(sqlQuery, params);
+
+    if (result && result.error) {
+      throw new Error(
+        result.error.message || "Erro desconhecido ao incluir o produto"
+      );
+    }
+
     return result;
-  } catch (err) {
-    return err;
+  } catch (error) {
+    const errorMessage =
+      error.originalError?.info?.message ||
+      error.message ||
+      "Erro desconhecido";
+    throw new Error(errorMessage);
   }
 };
-export const deleteProductsService = async (data) => {
-  const sqlQuery = ``;
+
+export const deleteProductsService = async (id) => {
+  const sqlQuery = `EXEC sp_DeletarProduto
+		@Id_produto = @id_produto
+	;`;
+  const params = {
+    id_produto: id,
+  };
   try {
-    const result = await execSQLQuery(sqlQuery);
+    const result = await execSQLQuery(sqlQuery, params);
+
+    if (result && result.error) {
+      throw new Error(
+        result.error.message || "Erro desconhecido ao incluir o produto"
+      );
+    }
+
     return result;
-  } catch (err) {
-    return err;
+  } catch (error) {
+    const errorMessage =
+      error.originalError?.info?.message ||
+      error.message ||
+      "Erro desconhecido";
+    throw new Error(errorMessage);
   }
 };

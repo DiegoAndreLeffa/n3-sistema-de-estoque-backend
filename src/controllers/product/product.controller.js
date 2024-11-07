@@ -12,7 +12,8 @@ export const createProductController = async (Request, Response) => {
     const result = await createProductsService(data);
     Response.status(201).json(result);
   } catch (err) {
-    Response.status(400).json(err);
+    const errorMessage = err.message || "Erro ao processar a solicitação";
+    Response.status(400).json({ error: errorMessage });
   }
 };
 
@@ -21,7 +22,8 @@ export const listProductController = async (Request, Response) => {
     const result = await listProductsService();
     Response.json(result);
   } catch (err) {
-    Response.status(400).json(err);
+    const errorMessage = err.message || "Erro ao processar a solicitação";
+    Response.status(400).json(errorMessage);
   }
 };
 
@@ -31,7 +33,8 @@ export const listIdProductController = async (Request, Response) => {
     const result = await listIdProductsService(id);
     Response.json(result);
   } catch (err) {
-    Response.status(400).json(err);
+    const errorMessage = err.message || "Erro ao processar a solicitação";
+    Response.status(400).json(errorMessage);
   }
 };
 
@@ -42,7 +45,8 @@ export const updateProductController = async (Request, Response) => {
     const result = await updateProductsService(id, data);
     Response.json(result);
   } catch (err) {
-    Response.status(400).json(err);
+    const errorMessage = err.message || "Erro ao processar a solicitação";
+    Response.status(400).json(errorMessage);
   }
 };
 
@@ -52,6 +56,7 @@ export const deleteProductController = async (Request, Response) => {
     const result = await deleteProductsService(id);
     Response.json(result);
   } catch (err) {
-    Response.status(400).json(err);
+    const errorMessage = err.message || "Erro ao processar a solicitação";
+    Response.status(400).json(errorMessage);
   }
 };

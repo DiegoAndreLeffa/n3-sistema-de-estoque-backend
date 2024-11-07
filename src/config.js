@@ -34,7 +34,6 @@ export const execSQLQuery = async (sqlQuery, params = {}) => {
 
   const request = pool.request();
 
-  // Adiciona parâmetros ao request de forma segura
   for (const [key, value] of Object.entries(params)) {
     request.input(key, value);
   }
