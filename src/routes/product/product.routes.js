@@ -14,4 +14,4 @@ productsRouter.post("", createProductController);
 productsRouter.get("", listProductController);
 productsRouter.get("/:id", listIdProductController);
 productsRouter.patch("/:id", updateProductController);
-productsRouter.delete("", deleteProductController);
+productsRouter.delete("/:id", deleteProductController);
