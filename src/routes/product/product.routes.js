@@ -13,5 +13,5 @@ export const productsRouter = Router();
 productsRouter.post("", createProductController);
 productsRouter.get("", listProductController);
 productsRouter.get("/:id", listIdProductController);
-productsRouter.patch("/:id", updateProductController);
+productsRouter.put("/:id", updateProductController);
 productsRouter.delete("/:id", deleteProductController);
