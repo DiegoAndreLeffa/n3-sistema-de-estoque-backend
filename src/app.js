@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import "dotenv/config";
 
 import {
@@ -17,14 +18,16 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors());
 
 app.use("/categories", categoriesRouter);
 app.use("/products", productsRouter);
-app.use("/requests", requestsRouter);
-app.use("/stock", stocksRouter);
-app.use("/supplier", suppliersRouter);
 app.use("/user", userRouter);
 app.use("/authentication", authRouter);
+
+app.use("/stock", stocksRouter);
+app.use("/requests", requestsRouter);
+app.use("/supplier", suppliersRouter);
 
 initDBConnection()
   .then(() => {

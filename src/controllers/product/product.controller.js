@@ -30,6 +30,7 @@ export const listProductController = async (Request, Response) => {
 export const listIdProductController = async (Request, Response) => {
   try {
     const id = parseInt(Request.params.id);
+    console.log(id);
     const result = await listIdProductsService(id);
     Response.json(result);
   } catch (err) {
@@ -43,7 +44,7 @@ export const updateProductController = async (Request, Response) => {
     const id = parseInt(Request.params.id);
     const data = Request.body;
     const result = await updateProductsService(id, data);
-    Response.json(result);
+    Response.status(201).json(result);
   } catch (err) {
     const errorMessage = err.message || "Erro ao processar a solicitação";
     Response.status(400).json(errorMessage);

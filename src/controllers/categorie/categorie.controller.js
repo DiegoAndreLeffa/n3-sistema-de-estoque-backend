@@ -19,7 +19,7 @@ export const createCategorieController = async (Request, Response) => {
 export const listCategorieController = async (Request, Response) => {
   try {
     const result = await listCategorieService();
-    Response.json(result);
+    Response.status(200).json(result);
   } catch (err) {
     Response.status(500).json(err);
   }
@@ -27,7 +27,7 @@ export const listCategorieController = async (Request, Response) => {
 
 export const listIdCategorieController = async (Request, Response) => {
   try {
-    const id = parseInt(Request.params.id);
+    const id = Request.params.id;
     const result = await listIdCategorieService(id);
     Response.json(result);
   } catch (err) {
@@ -48,7 +48,7 @@ export const updateCategorieController = async (Request, Response) => {
 
 export const deleteCategorieController = async (Request, Response) => {
   try {
-    const id = parseInt(Request.params.id);
+    const id = Request.params.id;
     const result = await deleteCategorieService(id);
     Response.json(result);
   } catch (err) {
