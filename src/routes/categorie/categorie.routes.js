@@ -13,5 +13,6 @@ export const categoriesRouter = Router();
 categoriesRouter.post("", createCategorieController);
 categoriesRouter.get("", listCategorieController);
 categoriesRouter.get("/:id", listIdCategorieController);
+categoriesRouter.delete("/:id", deleteCategorieController);
+
 categoriesRouter.patch("/:id", updateCategorieController);
-categoriesRouter.delete("", deleteCategorieController);

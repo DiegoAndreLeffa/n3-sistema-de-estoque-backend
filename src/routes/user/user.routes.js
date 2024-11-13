@@ -13,5 +13,5 @@ export const userRouter = Router();
 userRouter.post("", createUserController);
 userRouter.get("", listUserController);
 userRouter.get("/:id", listIdUserController);
-userRouter.patch("/:id", updateUserController);
+userRouter.put("/:id", updateUserController);
 userRouter.delete("", deleteUserController);
