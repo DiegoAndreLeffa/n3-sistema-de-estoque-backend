@@ -30,7 +30,6 @@ export const listProductController = async (Request, Response) => {
 export const listIdProductController = async (Request, Response) => {
   try {
     const id = parseInt(Request.params.id);
-    console.log(id);
     const result = await listIdProductsService(id);
     Response.json(result);
   } catch (err) {

@@ -118,8 +118,6 @@ export const listIdProductsService = async (data) => {
 };
 
 export const updateProductsService = async (id, data) => {
-  console.log(data);
-
   const sqlQueryCategory = `
     SELECT Id_categoria 
     FROM Categoria 
